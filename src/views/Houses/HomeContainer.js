@@ -1,24 +1,36 @@
-import { Container, Divider, Typography } from '@material-ui/core'
-import React from 'react'
+import { Box, Container, Divider, Grid, Typography } from '@material-ui/core'
+import React, {useEffect} from 'react'
 import HouseCard from './HouseCard'
-import { house } from '../../data/houses'
+import {connect} from 'react-redux'
+import {fetchProperties} from '../../actions/property'
 
-const HomeContainer = () => {
+
+const HomeContainer = ({house, fetchProperties}) => {
+
+    useEffect(()=>{
+        fetchProperties()
+    },[fetchProperties])
+
     return (
         <>
            <Container maxWidth="lg" style={{marginTop: "35px"}}>
                <Typography variant="h4" gutterBottom>Recent Properties</Typography>
                <Divider />
                <Typography variant="h6" gutterBottom color="primary">A few of our favourites, selected for you.</Typography>
-               {
-                   house.map((house,index)=> (
-                      <HouseCard key={index} house={house} /> 
-                   ))
-               }
-               
+               <Grid container spacing={3}>
+                   {
+                      !house?<Box>Loading available properties</Box>: <HouseCard house={house} /> 
+                   }
+               </Grid>
             </Container> 
         </>
     )
 }
 
-export default HomeContainer
+const mapStateToProps = state => {
+    return {
+        house: Object.values(state.property)
+    }
+}
+
+export default connect(mapStateToProps, {fetchProperties})(HomeContainer)

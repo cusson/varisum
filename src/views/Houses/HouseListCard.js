@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {  makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { Box, Grid } from "@material-ui/core";
+import  Grid  from "@material-ui/core/Grid";
+import Fade from '@material-ui/core/Fade';
+import Box from '@material-ui/core/Box';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProperties } from "../../actions/property";
@@ -21,20 +23,24 @@ const useStyles = makeStyles({
   },
 });
 
-const HouseCard = ({ house, fetchProperties }) => {
+const HouseListCard = ({ house, fetchProperties }) => {
   const classes = useStyles();
   
-  useEffect(() => {
-    fetchProperties();
-  }, [fetchProperties]);
+
+  // useEffect(() => {
+  //   fetchProperties();
+  // }, [fetchProperties]);
+
+
 
   return (
     <>
       {!house ? (
         <Box>Loading properties list...</Box>
       ) : (
-        _.uniq(house, 'id').slice(0, 2).map((house) => (
+        _.uniq(house, 'id').slice(0, house.length).map((house) => (
           <Grid item xs={12} sm={6} md={4} key={house.id}>
+            <Fade in={true}>
             <Link
               to={`/property/${house.id}`}
               style={{ textDecoration: "none" }}
@@ -82,6 +88,7 @@ const HouseCard = ({ house, fetchProperties }) => {
                 </CardActions> */}
               </Card>
             </Link>
+            </Fade>
           </Grid>
         ))
       )}
@@ -94,4 +101,4 @@ const mapStateToProps = (state) => {
     house: Object.values(state.property),
   };
 };
-export default connect(mapStateToProps, { fetchProperties })(HouseCard);
+export default connect(mapStateToProps, { fetchProperties })(HouseListCard);

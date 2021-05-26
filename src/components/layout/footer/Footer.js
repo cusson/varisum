@@ -39,7 +39,7 @@ const Footer = () => {
                          </a>     
                         </Box>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12}> 
                         <Typography variant="subtitle1" align="center" color="primary">
                             Varisum Properties Zimbabwe @{new Date().getFullYear()}
                         </Typography>

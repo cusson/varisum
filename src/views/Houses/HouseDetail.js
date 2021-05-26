@@ -10,7 +10,7 @@ import LocalHotelIcon from "@material-ui/icons/LocalHotel";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import BathtubIcon from "@material-ui/icons/Bathtub";
 import BorderOuterIcon from "@material-ui/icons/BorderOuter";
-import HouseCard from "./HouseCard";
+// import HouseCard from "./HouseCard";
 
 const useStyles = makeStyles((theme) => ({
   specsData: {

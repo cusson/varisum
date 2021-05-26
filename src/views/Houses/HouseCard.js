@@ -33,7 +33,7 @@ const HouseCard = ({ house, fetchProperties }) => {
       {!house ? (
         <Box>Loading properties list...</Box>
       ) : (
-        _.uniq(house, 'id').slice(0, 2).map((house) => (
+        _.uniq(house, 'id').slice(0, 3).map((house) => (
           <Grid item xs={12} sm={6} md={4} key={house.id}>
             <Link
               to={`/property/${house.id}`}

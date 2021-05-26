@@ -154,9 +154,9 @@ export default function App() {
                             aria-label="open drawer"
                         >
                         </IconButton>
-
-                        <img src="/logo.png" alt="..." width="145" height="59" />
-
+                        <Link to="/">
+                            <img src="/logo.png" alt="..." width="145" height="59" />
+                        </Link>
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>
                             <Typography className={classes.title} variant="subtitle1" noWrap component={CustomRouterLink} to="/">

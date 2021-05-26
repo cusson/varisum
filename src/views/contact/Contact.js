@@ -10,8 +10,9 @@ const Contact = () => {
         <>
             <Container maxWidth="lg" style={{ marginTop: "15px" }}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <Typography variant="h5" gutterBottom>Contact Us</Typography>
+                    <Grid item xs={12} style={{ marginTop: "15px" }}>
+                        <Typography variant="h5" gutterBottom align="center">Contact Us</Typography>
+                        <Divider />
                     </Grid>
                     <Divider />
                     <Grid item xs={12}>

@@ -1,40 +1,31 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { Box, Grid } from "@material-ui/core";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
 import HotelIcon from "@material-ui/icons/Hotel";
 import BathtubIcon from "@material-ui/icons/Bathtub";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import SquareFootIcon from "@material-ui/icons/SquareFoot";
+import { Box, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchProperties } from "../../actions/property";
 import _ from "lodash";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
-    display: "flex",
-    maxWidth: 810,
-    marginBottom: "10px",
+    maxWidth: 600,
+    marginTop: "15px",
     boxShadow: "0px 1px 1px 0px rgba(0,0,0,0.75)",
     "&:hover": {
       boxShadow: "0px 1px 11px 0px rgba(0,0,0,0.75)",
     },
   },
-  details: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  content: {
-    flex: "1 0 auto",
-  },
   media: {
-    width: 300,
-    height: 230,
+    height: 310,
   },
   specification: {
     display: "flex",
@@ -43,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
   spec: {
     fontWeight: 200,
   },
-}));
+});
 
-const HouseCard = ({ house, fetchProperties }) => {
+const NewCard = ({ house, fetchProperties }) => {
   const classes = useStyles();
 
   useEffect(() => {
@@ -66,50 +57,28 @@ const HouseCard = ({ house, fetchProperties }) => {
                 style={{ textDecoration: "none" }}
               >
                 <Card className={classes.root}>
-                  <CardMedia
-                    className={classes.media}
-                    image={house.image1}
-                    title={house.location}
-                  />
-                  <div className={classes.details}>
-                    <CardContent className={classes.content}>
-                      <Typography align="left" variant="h5" color="primary" gutterBottom>
-                        USD ${house.cost}
-                      </Typography>
-                      <Typography align="left" variant="subtitle1">
-                        {house.bed} Bedroom {house.type}
-                      </Typography>
-                      <Grid conatiner spacing={3} >
-                        <Grid item xs={12} style={{ display: "flex", marginTop: "15px" }}>
-                         <LocationOnIcon style={{ marginRight: "8px" }} />{" "}
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={house.image1}
+                      title={house.location}
+                    />
+                    <CardContent>
+                      <Grid container spacing={1} style={{ display: "flex" }}>
+                        <Typography align="center" variant="h5" color="primary">
+                          USD ${house.cost}
+                        </Typography>
+
                         <Typography
                           align="center"
                           variant="subtitle1"
-                          color="primary"
-                          // className={classes.spec}
+                          style={{ marginLeft: "15px" }}
                         >
-                          {house.city} {house.location}
-                        </Typography> 
-                        </Grid>
+                          {house.bed} Bedroom {house.type} in {house.city}{" "}
+                          {house.location}
+                        </Typography>
                       </Grid>
-                      
-                      <Grid conatiner spacing={3} >
-                        <Grid item xs={12} style={{ display: "flex", marginTop: "15px" }}>
-                        <Typography
-                          align="justify"
-                          variant="subtitle1"
-                          color="primary"
-                          style={{lineHeight:"10px"}}
-                        >
-                          
-                        </Typography> 
-                        </Grid>
-                      </Grid>
-                      
-                      <Grid container spacing={1} style={{ marginTop: "15px" }}>
-                        <Grid item xs={12}>
-                        <hr style={{color:"#eee"}}/>
-                        </Grid>
+                      <Grid container spacing={1} style={{ marginTop: "8px" }}>
                         <Grid
                           item
                           xs={3}
@@ -117,7 +86,7 @@ const HouseCard = ({ house, fetchProperties }) => {
                           md={3}
                           className={classes.specification}
                         >
-                          <HotelIcon style={{ marginRight: "8px" }} />
+                          <HotelIcon style={{ marginRight: "8px" }} />{" "}
                           <Typography
                             align="center"
                             variant="subtitle1"
@@ -168,20 +137,19 @@ const HouseCard = ({ house, fetchProperties }) => {
                           md={3}
                           className={classes.specification}
                         >
-                          <SquareFootIcon style={{ marginRight: "8px" , marginLeft:"5px"}} />
+                          <SquareFootIcon style={{ marginRight: "8px" }} />
                           <Typography
                             align="center"
                             variant="subtitle1"
                             color="primary"
                             className={classes.spec}
                           >
-                            {house.squareft}
+                            {house.squareft}{" "} {house.mType}
                           </Typography>
                         </Grid>
                       </Grid>
                     </CardContent>
-                    <div></div>
-                  </div>
+                  </CardActionArea>
                 </Card>
               </Link>
             </Box>
@@ -196,4 +164,4 @@ const mapStateToProps = (state) => {
     house: Object.values(state.property),
   };
 };
-export default connect(mapStateToProps, { fetchProperties })(HouseCard);
+export default connect(mapStateToProps, { fetchProperties })(NewCard);

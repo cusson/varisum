@@ -1,4 +1,7 @@
 import { Box, CardMedia, Container, Divider, Grid, Typography } from '@material-ui/core'
+import PhoneIcon from '@material-ui/icons/Phone';
+import EmailIcon from '@material-ui/icons/Email';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import React from 'react'
 
 const Footer = () => {
@@ -9,11 +12,14 @@ const Footer = () => {
                     <Grid item xs={12} md={6} >
                         <Typography variant="h5" gutterBottom align="center">Contact Us</Typography>
                         <Divider />
-                        <Typography variant="subtitle1" style={{ marginTop: "15px" }} color="primary" align="center">
-                            Call us/Whatsapp: +263 772 316 414
+                        <Typography variant="subtitle1" style={{ marginTop: "15px" }}  align="center">
+                           <PhoneIcon /> Phone: +263 772 316 414
                         </Typography>
                         <Typography variant="subtitle1" style={{ marginTop: "15px" }} align="center">
-                            Address <br />
+                            <EmailIcon />{" "}info@varisumpropertieszimbabwe.co.zw
+                        </Typography>
+                        <Typography variant="subtitle1" style={{ marginTop: "15px" }} align="center">
+                            <LocationOnIcon /> <br />
                             110 Centernary,<br />
                             Building 9th Avenue and Hebert Chitepo<br />
                             Bulawayo<br />

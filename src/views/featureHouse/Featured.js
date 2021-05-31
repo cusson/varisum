@@ -5,11 +5,11 @@ const Featured = () => {
     return (
         <>
             <Container maxWidth="lg">
-                <Grid container spacing={2} style={{marginTop:"5px"}}>
+                <Grid container spacing={2} style={{marginTop:"60px"}}>
                     <Grid item xs={12}>
                        <CardMedia
-                        image="/home.jpeg"
-                        style={{height: "500px"}}
+                        image="/banner.jpg"
+                        style={{height: "300px"}}
                         /> 
                     </Grid>
                 </Grid>

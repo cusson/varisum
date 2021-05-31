@@ -26,7 +26,7 @@ const Contact = () => {
                         </Typography>
                         <Typography variant="subtitle1" style={{ marginTop: "15px" }} align="center">
                             <EmailIcon /> {" "}
-                             +263 772 316 414
+                            info@varisumpropertieszimbabwe.co.zw
                         </Typography>
                             <Typography variant="subtitle1" style={{ marginTop: "15px" }} align="center" gutterBottom>
                                 <LocationOnIcon /><br />

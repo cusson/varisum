@@ -142,9 +142,9 @@ export default function App() {
     );
 
     return (
-
+        
         <div className={classes.grow}>
-            <AppBar position="static" color="transparent">
+            <AppBar position="fixed"  style={{background:"#eee"}}>
                 <Container maxWidth="lg">
                     <Toolbar>
                         <IconButton
@@ -163,7 +163,10 @@ export default function App() {
                                 Home
                             </Typography>
                             <Typography className={classes.title} variant="subtitle1" noWrap component={CustomRouterLink} to="/property">
-                                Properties
+                                For Sale
+                            </Typography>
+                            <Typography className={classes.title} variant="subtitle1" noWrap component={CustomRouterLink} to="/rent">
+                                To Rent
                             </Typography>
                             <Typography className={classes.title} variant="subtitle1" noWrap component={CustomRouterLink} to="/contact">
                                 Contact Us
@@ -185,7 +188,7 @@ export default function App() {
             </AppBar>
             {renderMobileMenu}
         </div>
-
+       
     );
 }
 

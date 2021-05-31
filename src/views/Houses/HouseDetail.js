@@ -50,7 +50,7 @@ const HouseDetail = ({ house, fetchProperty, match }) => {
         ) : (
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Typography variant="h5">City :-{house.city}</Typography>
+              <Typography variant="h5" color="primary">City :-{house.city}{" "} Price: USD${house.cost}</Typography>
             </Grid>
             <Grid container spacing={3}>
               <Grid item xs={12} md={8}>

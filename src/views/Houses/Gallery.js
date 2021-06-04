@@ -14,7 +14,7 @@ const Gallery = (props) => {
 
     return (
         <>
-            <ImageGallery items = {itemImage}/>
+            <ImageGallery items = {itemImage} thumbnailPosition="right"/>
         </>
     )
 }

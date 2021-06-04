@@ -1,6 +1,7 @@
 import {CardMedia, Container, Grid } from '@material-ui/core'
 import React from 'react'
 
+
 const Featured = () => {
     return (
         <>
@@ -9,7 +10,7 @@ const Featured = () => {
                     <Grid item xs={12}>
                        <CardMedia
                         image="/banner.jpg"
-                        style={{height: "300px"}}
+                        style={{height: "300px", width:"1200px"}}
                         /> 
                     </Grid>
                 </Grid>

@@ -79,7 +79,7 @@ const HouseCard = ({ house, fetchProperties }) => {
                       <Typography align="left" variant="subtitle1">
                         {house.bed} Bedroom {house.type}
                       </Typography>
-                      <Grid conatiner spacing={3} >
+                      <Grid container spacing={3} >
                         <Grid item xs={12} style={{ display: "flex", marginTop: "15px" }}>
                          <LocationOnIcon style={{ marginRight: "8px" }} />{" "}
                         <Typography
@@ -93,7 +93,7 @@ const HouseCard = ({ house, fetchProperties }) => {
                         </Grid>
                       </Grid>
                       
-                      <Grid conatiner spacing={3} >
+                      <Grid container spacing={3} >
                         <Grid item xs={12} style={{ display: "flex", marginTop: "15px" }}>
                         <Typography
                           align="justify"

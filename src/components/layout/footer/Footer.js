@@ -33,14 +33,14 @@ const Footer = () => {
                         <a href="https://www.facebook.com/varisumpropertieszimbabwe" target="_blank" rel="noreferrer">
                              <CardMedia
                             image="/fb.png"
-                            style={{height:70, width:70, marginTop:"20px", margin:"0px 10px"}}
+                            style={{height:40, width:40, marginTop:"20px", margin:"0px 10px"}}
                          /> 
                         </a>
                         
                          <a href="https://www.instagram.com/varisumpropertieszimbabwe" target="_blank" rel="noreferrer">
                            <CardMedia
                             image="/in.png"
-                            style={{height:70, width:70, marginTop:"20px", margin:"0px 10px"}}
+                            style={{height:40, width:40, marginTop:"20px", margin:"0px 10px"}}
                          />
                          </a>     
                         </Box>
